@@ -1,4 +1,5 @@
-import Module from 'status/modules/index.js'
+const dirname = location.href;
+import Module from dirname+'modules/index.js'
 const module = new Module();
 const ws = new WebSocket("wss://api.lanyard.rest/socket")
 
