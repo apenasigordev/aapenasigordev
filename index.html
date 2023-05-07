@@ -11,12 +11,20 @@
   <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-gray-800 text-white">
-  <div class="flex flex-col w-full h-[92vh] justify-center items-center">
+<body class="bg-gray-800 bg-gradient-to-br from-slate-700 via-gray-800 to-slate-900 text-white transition-all duration-1000">
+  <div id="loading" class="flex flex-col justify-center items-center w-full h-[92vh]">
+    <p id="spin" class="text-2xl font-black">Loading... :0</p>
+  </div>
+  <div id="content" class="hidden flex flex-col w-full h-[92vh] justify-center items-center">
     <div class="flex flex-col md:flex-row justify-center items-center md:w-full transition-all duration-500 delay-300">
-      <img
-        class="z-20 w-52 h-52 md:w-48 md:h-48 rounded-full ring-4 hover:ring-8 hover:ring-offset-2 ring-offset-0 ring-gray-500 transition-all ease-in duration-350 delay-100 m-2"
+      <div class="relative">
+        <img
+        class="absolute z-20 w-52 h-52 md:w-48 md:h-48 rounded-full ring-4 hover:ring-8 hover:ring-offset-2 ring-offset-0 ring-gray-500  transition-all ease-in duration-350 delay-100"
         id="avatar" alt="Igor avatar" src="https://cdn.discordapp.com/embed/avatars/4.png?size=4096" />
+        <img
+        class="blur-xl z-10 w-52 h-52 md:w-48 md:h-48 rounded-full ring-4 hover:ring-8 hover:ring-offset-2 ring-offset-0 ring-gray-500  transition-all ease-in duration-350 delay-100 m-2"
+        id="avatar2" alt="Igor avatar box" src="https://cdn.discordapp.com/embed/avatars/4.png?size=4096" />
+      </div>
       <p class="text-2xl md:text-xl md:ml-2 font-bold">Hello, i'm Igor!</p>
       <hr class="h-1 w-48 md:w-2 md:h-48 mx-auto my-4 bg-gray-700 border-0 rounded md:mx-7 transition-all duration-500">
       <div class="text-md text-center md:text-left md:text-sm transition-all duration-500">
@@ -27,12 +35,18 @@
       <div class="flex flex-col md:flex-row">
         <div>
           <ul class="flex mb-2 md:mb-0 md:flex-col justify-center items-center bg-slate-900 p-2 rounded-xl gap-x-2">
-            <li id="mobile" class="md:font-2xl transition-all duration-500 font-bold text-xl text-gray-500"><i
-                class="fa-solid fa-mobile"></i></li>
-            <li id="web" class="md:font-2xl transition-all duration-500 font-bold text-xl text-gray-500"><i
-                class="fa-solid fa-globe"></i></li>
-            <li id="computer" class="md:font-2xl transition-all duration-500 font-bold text-xl text-gray-500"><i
-                class="fa-solid fa-computer"></i></li>
+            <li id="mobile" class="md:font-2xl transition-all duration-500 font-bold text-xl text-gray-500">
+              <i class="fa-solid fa-mobile"></i>
+              <!--<i class="blur-lg fa-solid fa-mobile"></i>-->
+            </li>
+            <li id="web" class="md:font-2xl transition-all duration-500 font-bold text-xl text-gray-500">
+              <i class="fa-solid fa-globe"></i>
+              <!--<i class="blur-lg fa-solid fa-globe"></i>-->
+            </li>
+            <li id="computer" class="md:font-2xl transition-all duration-500 font-bold text-xl text-gray-500">
+              <i class="fa-solid fa-computer"></i>
+              <!--<i class="blur-lg fa-solid fa-computer"></i>-->
+            </li>
           </ul>
         </div>
         <div>
@@ -50,24 +64,24 @@
         </div>
       </div>
     </div>
-    <hr id="nowplayinghr"
+     <hr id="nowplayinghr"
       class="hidden w-48 h-1 md:h-2 mx-auto my-4 bg-gray-700 border-0 rounded md:my-7 transition-all duration-500 delay-300">
-    <div id="nowplaying"
+      <div id="nowplaying"
       class="bg-gray-900 flex flex-col p-3 hidden rounded-2xl w-full md:w-1/2 transition-all duration-500 delay-300">
-      <p id="ActivityName"></p>
-      <div class="flex">
-        <div id="assets">
-          <img id="ActivityLargeImage" class="rounded-xl w-16 h-16 m-2" />
+        <p id="ActivityName"></p>
+        <div class="flex">
+          <div id="assets">
+            <img id="ActivityLargeImage" class="rounded-xl w-16 h-16 m-2" />
+          </div>
+          <div class="flex flex-col justify-center" id="Activity">
+            <p class="font-semibold" id="ActivityDetails"></p>
+            <p id="ActivityState"></p>
+          </div>
         </div>
-        <div class="flex flex-col justify-center" id="Activity">
-          <p class="font-semibold" id="ActivityDetails"></p>
-          <p id="ActivityState"></p>
-        </div>
-      </div>
-    </div>
+       </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-  <script>//eruda.init()
+  <script>// eruda.init()
   // twemoji.parse(document.body)</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
   <script src="status/base.js" type="module"></script>

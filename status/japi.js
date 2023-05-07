@@ -8,6 +8,7 @@ export default class Api {
     const request = await fetch(this.api)
     const { data, presence } = await request.json()
     $('#avatar').attr('src', data.avatarURL + "?size=4096")
+    $('#avatar2').attr('src', data.avatarURL + "?size=4096")
     console.log({data, presence})
   }
 }

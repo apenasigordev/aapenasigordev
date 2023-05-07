@@ -55,6 +55,8 @@ ws.onmessage = ({ data }) => {
      // console.log(oldColor)
       $("#avatar").removeClass(oldColor);
       $('#avatar').addClass(statusColor);
+      $("#avatar2").removeClass(oldColor);
+      $('#avatar2').addClass(statusColor);
       setTimeout(() => {
         oldColor = statusColor;
        // console.log(oldColor)
