@@ -73,21 +73,19 @@ ws.onmessage = ({ data }) => {
       }
       if(activeOn.mobile) {
         $("#mobile").addClass("text-green-500");
-        $("#web").removeClass("text-green-500");
-        $("#computer").removeClass("text-green-500");
-      } else if(activeOn.web) {
-        $("#mobile").removeClass("text-green-500");
+      } else {
+        $("#mobile").removeClass("text-green-500")
+      }
+      if(activeOn.web) {
         $("#web").addClass("text-green-500");
-        $("#computer").removeClass("text-green-500");
-      } else if(activeOn.desktop) {
-        $("#mobile").removeClass("text-green-500");
-        $("#web").removeClass("text-green-500");
+      } else {
+        $("#web").removeClass("text-green-500")
+      }
+      if(activeOn.desktop) {
         $("#computer").addClass("text-green-500");
       } else {
-        $("#mobile").removeClass("text-green-500");
-        $("#web").removeClass("text-green-500");
-        $("#computer").removeClass("text-green-500");
-      }
+        $("#computer").removeClass("text-green-500")
+  }
       if(user.activities[0] && user.listening_to_spotify) {
         module.spotify(user);
       } else if(user.activities[0]) {
