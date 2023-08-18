@@ -1,14 +1,5 @@
 # Quem sou eu?
-Olá 👋, sou Igor. Um desenvolvedor de bots e sites.
-
-# Onde eu estou?
-- Eu atualmente moro no Brasil 🇧🇷
-
-
-# Qual meu trabalho atual?
-- Além de ser desenvolvedor, eu sou estudante, ou seja, eu estudo.
-
-- Developer / Team "Leader" @ OnBeat
+Olá 👋, sou Igor. Um desenvolvedor que simplifica o seu dia!!!
 
 # Veja mais
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=apenasigordev&locale=pt-br&show_icons=true&theme=tokyonight"/>
