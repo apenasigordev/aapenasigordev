@@ -67,7 +67,7 @@
       </div>
     </div>
     <div>
-      <button onclick="window.location.href='/spotify_playlists'"  class="mt-2 flex md:flex-col justify-center items-center bg-slate-900 p-2 rounded-xl">Go to my Spotify playlists</button>
+      <button onclick="window.location.href='/spotify_playlists'"  class="mt-2 flex md:flex-col justify-center items-center bg-slate-900 p-2 rounded-xl">Spotify playlists</button>
     </div>
      <hr id="nowplayinghr"
       class="hidden w-48 h-1 md:h-2 mx-auto my-4 bg-gray-700 border-0 rounded md:my-7 transition-all duration-500 delay-300">
@@ -82,20 +82,41 @@
             <p class="font-semibold" id="ActivityDetails"></p>
             <p id="ActivityState"></p>
           </div>
-          <div class="m-1">
-            <i class="fa-solid fa-play"></i>
+          <div id="player" class="m-1 absolute right-0">
+            <i id="play" class="hidden fa-solid fa-play"></i>
+            <i id="pause" class="hidden fa-solid fa-pause"></i>
           </div>
         </div>
        </div>
-    <audio id="ActivityAudio" controls loop>
+    <audio id="ActivityAudio" autoplay loop>
     </audio>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
   <script>
     const audio = document.getElementById("ActivityAudio");
     audio.onloadeddata = function () {
-      
       console.log("loaded!")
+      $("#play").removeClass("hidden")
+      // $("#pause").addClass("hidden")
+    }
+    const playerbtn = document.getElementById("player")
+    playerbtn.onclick = function () {
+      if(audio.paused) {
+        audio.play()
+      } else {
+        audio.pause()
+      }
+      
+      if(audio.paused) {
+        $("#play").removeClass("hidden")
+        $("#pause").addClass("hidden")
+      } else {
+        $("#play").addClass("hidden")
+        $("#pause").removeClass("hidden")
+      }
+    }
+    audio.onplaying = function (e) {
+      console.log(e)
     }
     eruda.init()
   // twemoji.parse(document.body)</script>
