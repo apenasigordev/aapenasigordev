@@ -1,7 +1,7 @@
 // import 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js'
 console.log(location.href);
 
-document.addEventListener("load", (event) => {
+document.addEventListener("DOMContentLoaded", (event) => {
   console.log("Loaded the page")
   document.getElementById("loading").classList.add("hidden")
   document.getElementById("content").classList.remove("hidden")
