@@ -14,3 +14,22 @@ import "./modules/activityModal.js"
 const japi = new Japi()
 
 japi.show()
+
+
+const audio = document.getElementById("ActivityAudioPlayer")
+
+audio.on("loadeddata", () => {
+  if(audio.paused) {
+    $("#play").removeClass("hidden");
+    $("#pause").addClass("hidden");
+  } else {
+    $("#pause").removeClass("hidden");
+    $("#play").addClass("hidden");
+  }
+  $("#playerbtn").removeClass("opacity-0")
+  $("#playerbtn").addClass("opacity-50")
+  setTimeout(() => {
+    $("#playerbtn").removeClass("opacity-50")
+    $("#playerbtn").addClass("opacity-0")
+  }, 1000);
+});
