@@ -7,7 +7,7 @@ export default class Module {
     $("#ActivityDetails").text(user.spotify.song)
     $("#ActivityState").html(`by <span class="font-bold">${user.spotify.artist}</span>`)
     $('#ActivityLargeImage').attr('src', user.spotify.album_art_url)
-    console.log(user.spotify)
+    $('#ActivityAudio').attr('src', `https://spotifytracks.figueiredoigor3.repl.co/track/${user.spotify.track_id}/preview`)
   }
   async presence(user) {
     const activity = user.activities[0]
