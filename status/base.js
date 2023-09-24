@@ -16,7 +16,7 @@ const japi = new Japi()
 japi.show()
 
 
-const audio = document.getElementById("ActivityAudioPlayer")
+const audio = document.getElementById("ActivityAudio")
 
 audio.on("loadeddata", () => {
   if(audio.paused) {
