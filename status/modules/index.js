@@ -1,3 +1,4 @@
+const audio = new Audio()
 export default class Module {
   constructor() {
     
@@ -7,7 +8,9 @@ export default class Module {
     $("#ActivityDetails").text(user.spotify.song)
     $("#ActivityState").html(`by <span class="font-bold">${user.spotify.artist}</span>`)
     $('#ActivityLargeImage').attr('src', user.spotify.album_art_url)
-    $('#ActivityAudio').attr('src', `https://spotifytracks.figueiredoigor3.repl.co/track/${user.spotify.track_id}/preview`)
+    audio.src = `https://spotifytracks.figueiredoigor3.repl.co/track/${user.spotify.track_id}/preview`
+    audio.load()
+    audio.play()
   }
   async presence(user) {
     const activity = user.activities[0]
