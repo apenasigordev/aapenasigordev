@@ -75,15 +75,19 @@
       class="bg-gray-900 flex flex-col p-3 hidden rounded-2xl w-full md:w-1/2 transition-all duration-500 delay-300">
         <p id="ActivityName"></p>
         <div class="flex">
-          <div id="assets">
-            <img id="ActivityLargeImage" class="rounded-xl w-16 h-16 m-2" />
+          <div class="relative rounded-xl w-16 h-16 m-2" id="assets">
+            <div id="playerbtn" class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-slate-900/50 opacity-0 group-hover:opacity-100 duration-500">
+              <i id="play" class="hidden fa-solid fa-play"></i>
+              <i id="pause" class="hidden fa-solid fa-pause"></i>
+            </div>
+            <img id="ActivityLargeImage" class="w-full object-cover" />
           </div>
           <div class="m-3 flex flex-col justify-center" id="Activity">
             <p class="font-semibold" id="ActivityDetails"></p>
             <p id="ActivityState"></p>
           </div>
         </div>
-        <audio controls autoplay>
+        <audio id="ActivityAudioPlayer">
               <source id="ActivityAudio"></source>
         </audio>
        </div>
